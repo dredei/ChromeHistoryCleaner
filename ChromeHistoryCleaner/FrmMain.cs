@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ChromeHistoryCleaner
+{
+    public partial class FrmMain : Form
+    {
+        public FrmMain()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click( object sender, EventArgs e )
+        {
+            //HistoryCleaner.MakeBackup( @"c:\Users\Home\AppData\Local\Google\Chrome\User Data\Default\History" );
+            HistoryCleaner.ClearHistory( @"c:\Users\Home\AppData\Local\Google\Chrome\User Data\Default\History", 2, 14 );
+        }
+    }
+}
