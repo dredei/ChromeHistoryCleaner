@@ -62,5 +62,14 @@ namespace ChromeHistoryCleaner
         {
             this.SaveSettings();
         }
+
+        private void btnSelectFile_Click( object sender, EventArgs e )
+        {
+            var ofd = new OpenFileDialog { Filter = "Все файлы|*.*", Multiselect = false };
+            if ( ofd.ShowDialog() == DialogResult.OK )
+            {
+                tbFilePath.Text = ofd.FileName;
+            }
+        }
     }
 }

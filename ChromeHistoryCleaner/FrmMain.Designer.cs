@@ -68,6 +68,7 @@
             this.btnSelectFile.TabIndex = 3;
             this.btnSelectFile.Text = "...";
             this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
             // label2
             // 
