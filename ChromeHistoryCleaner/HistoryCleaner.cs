@@ -94,18 +94,13 @@ namespace ChromeHistoryCleaner
                 {
                     count++;
                 }
+                res.Close();
                 query = "DELETE FROM urls" +
                         " WHERE visit_count < " + visitCount + " AND " + lt + " <= '" + dtDefStr + "'";
                 command.CommandText = query;
                 command.ExecuteNonQuery();
             }
-            using ( SQLiteCommand command = new SQLiteCommand( conn ) )
-            {
-                string query = "DELETE FROM urls" +
-                        " WHERE visit_count < " + visitCount + " AND " + lt + " <= '" + dtDefStr + "'";
-                command.CommandText = query;
-                command.ExecuteNonQuery();
-            }
+            conn.Close();
             return count;
         }
 
