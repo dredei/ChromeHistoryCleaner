@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbFilePath = new System.Windows.Forms.TextBox();
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.nudVisitCount = new System.Windows.Forms.NumericUpDown();
@@ -52,17 +52,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Путь к файлу History:";
             // 
-            // textBox1
+            // tbFilePath
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbFilePath.Location = new System.Drawing.Point(3, 16);
+            this.tbFilePath.Name = "tbFilePath";
+            this.tbFilePath.Size = new System.Drawing.Size(344, 20);
+            this.tbFilePath.TabIndex = 2;
             // 
             // btnSelectFile
             // 
             this.btnSelectFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelectFile.Location = new System.Drawing.Point(254, 14);
+            this.btnSelectFile.Location = new System.Drawing.Point(353, 14);
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(28, 23);
             this.btnSelectFile.TabIndex = 3;
@@ -168,6 +168,7 @@
             this.btnStart.TabIndex = 11;
             this.btnStart.Text = "Старт";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // FrmMain
             // 
@@ -185,7 +186,7 @@
             this.Controls.Add(this.nudVisitCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSelectFile);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbFilePath);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -202,7 +203,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbFilePath;
         private System.Windows.Forms.Button btnSelectFile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudVisitCount;
