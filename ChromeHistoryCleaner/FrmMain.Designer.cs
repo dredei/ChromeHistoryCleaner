@@ -72,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 40);
+            this.label2.Location = new System.Drawing.Point(0, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(284, 13);
             this.label2.TabIndex = 4;
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(341, 40);
+            this.label3.Location = new System.Drawing.Point(341, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 6;
@@ -90,7 +90,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 58);
+            this.label4.Location = new System.Drawing.Point(0, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(168, 13);
             this.label4.TabIndex = 7;
@@ -99,7 +99,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(225, 58);
+            this.label5.Location = new System.Drawing.Point(225, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 9;
@@ -108,7 +108,7 @@
             // btnStart
             // 
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.Location = new System.Drawing.Point(3, 97);
+            this.btnStart.Location = new System.Drawing.Point(3, 104);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(378, 23);
             this.btnStart.TabIndex = 11;
@@ -122,7 +122,7 @@
             this.cbMakeBackup.Checked = true;
             this.cbMakeBackup.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMakeBackup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbMakeBackup.Location = new System.Drawing.Point(3, 74);
+            this.cbMakeBackup.Location = new System.Drawing.Point(3, 81);
             this.cbMakeBackup.Name = "cbMakeBackup";
             this.cbMakeBackup.Size = new System.Drawing.Size(161, 17);
             this.cbMakeBackup.TabIndex = 10;
@@ -131,7 +131,7 @@
             // 
             // nudDefDays
             // 
-            this.nudDefDays.Location = new System.Drawing.Point(174, 56);
+            this.nudDefDays.Location = new System.Drawing.Point(174, 63);
             this.nudDefDays.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -153,7 +153,7 @@
             // 
             // nudVisitCount
             // 
-            this.nudVisitCount.Location = new System.Drawing.Point(290, 38);
+            this.nudVisitCount.Location = new System.Drawing.Point(290, 42);
             this.nudVisitCount.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -179,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(383, 122);
+            this.ClientSize = new System.Drawing.Size(383, 130);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.cbMakeBackup);
             this.Controls.Add(this.label5);
