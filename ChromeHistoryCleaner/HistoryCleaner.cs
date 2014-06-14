@@ -78,18 +78,18 @@ namespace ChromeHistoryCleaner
             }
             SQLiteConnection conn = new SQLiteConnection( "Data Source=" + path );
             conn.Open();
+            BigInteger count = 0;
+            var dtDef = DateTime.Now.AddDays( -dayDef );
+            string dtDefStr = dtDef.ToString( "yyyy-MM-dd hh:mm:ss" );
+            const string lt = "datetime(last_visit_time/1000000-11644473600,'unixepoch','localtime')";
             using ( SQLiteCommand command = new SQLiteCommand( conn ) )
             {
-                var dtDef = DateTime.Now.AddDays( -dayDef );
-                string dtDefStr = dtDef.ToString( "yyyy-MM-dd hh:mm:ss" );
-                const string lt = "datetime(last_visit_time/1000000-11644473600,'unixepoch','localtime')";
                 string query = "SELECT " + lt + " AS last_visit_time, url, visit_count" +
                                " FROM urls" +
                                " WHERE visit_count < " + visitCount + " AND " + lt + " <= '" + dtDefStr + "'" +
                                " ORDER BY last_visit_time DESC";
                 command.CommandText = query;
                 var res = command.ExecuteReader();
-                BigInteger count = 0;
                 while ( res.Read() )
                 {
                     count++;
@@ -98,8 +98,15 @@ namespace ChromeHistoryCleaner
                         " WHERE visit_count < " + visitCount + " AND " + lt + " <= '" + dtDefStr + "'";
                 command.CommandText = query;
                 command.ExecuteNonQuery();
-                return count;
             }
+            using ( SQLiteCommand command = new SQLiteCommand( conn ) )
+            {
+                string query = "DELETE FROM urls" +
+                        " WHERE visit_count < " + visitCount + " AND " + lt + " <= '" + dtDefStr + "'";
+                command.CommandText = query;
+                command.ExecuteNonQuery();
+            }
+            return count;
         }
 
         /// <summary>

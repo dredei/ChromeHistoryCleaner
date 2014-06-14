@@ -3,6 +3,7 @@
 using System;
 using System.Numerics;
 using System.Windows.Forms;
+using ChromeHistoryCleaner.Properties;
 using ExtensionMethods;
 
 #endregion
@@ -15,6 +16,22 @@ namespace ChromeHistoryCleaner
         {
             this.InitializeComponent();
             this.tbFilePath.Text = HistoryCleaner.GetPathToHistory();
+            this.LoadSettings();
+        }
+
+        private void SaveSettings()
+        {
+            Settings.Default.VisitCount = this.nudVisitCount.Value;
+            Settings.Default.DayDef = this.nudDefDays.Value;
+            Settings.Default.MakeBackup = this.cbMakeBackup.Checked;
+            Settings.Default.Save();
+        }
+
+        private void LoadSettings()
+        {
+            this.nudVisitCount.Value = Settings.Default.VisitCount;
+            this.nudDefDays.Value = Settings.Default.DayDef;
+            this.cbMakeBackup.Checked = Settings.Default.MakeBackup;
         }
 
         private void btnStart_Click( object sender, EventArgs e )
@@ -39,6 +56,11 @@ namespace ChromeHistoryCleaner
                     MessageBoxIcon.Information );
                 this.btnStart.Enabled = true;
             }
+        }
+
+        private void FrmMain_FormClosing( object sender, FormClosingEventArgs e )
+        {
+            this.SaveSettings();
         }
     }
 }

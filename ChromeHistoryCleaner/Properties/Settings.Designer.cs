@@ -22,5 +22,41 @@ namespace ChromeHistoryCleaner.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public decimal VisitCount {
+            get {
+                return ((decimal)(this["VisitCount"]));
+            }
+            set {
+                this["VisitCount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("14")]
+        public decimal DayDef {
+            get {
+                return ((decimal)(this["DayDef"]));
+            }
+            set {
+                this["DayDef"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MakeBackup {
+            get {
+                return ((bool)(this["MakeBackup"]));
+            }
+            set {
+                this["MakeBackup"] = value;
+            }
+        }
     }
 }

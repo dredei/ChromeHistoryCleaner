@@ -32,15 +32,15 @@
             this.tbFilePath = new System.Windows.Forms.TextBox();
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.nudVisitCount = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.nudDefDays = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbMakeBackup = new System.Windows.Forms.CheckBox();
             this.btnStart = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nudVisitCount)).BeginInit();
+            this.cbMakeBackup = new System.Windows.Forms.CheckBox();
+            this.nudDefDays = new System.Windows.Forms.NumericUpDown();
+            this.nudVisitCount = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudDefDays)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVisitCount)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,28 +78,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Удалить записи с количеством посещений менее чем";
             // 
-            // nudVisitCount
-            // 
-            this.nudVisitCount.Location = new System.Drawing.Point(290, 38);
-            this.nudVisitCount.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nudVisitCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudVisitCount.Name = "nudVisitCount";
-            this.nudVisitCount.Size = new System.Drawing.Size(45, 20);
-            this.nudVisitCount.TabIndex = 5;
-            this.nudVisitCount.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -117,6 +95,39 @@
             this.label4.Size = new System.Drawing.Size(168, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Защитить недавние записии за";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(225, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "дней от удаления";
+            // 
+            // btnStart
+            // 
+            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStart.Location = new System.Drawing.Point(3, 97);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(378, 23);
+            this.btnStart.TabIndex = 11;
+            this.btnStart.Text = "Старт";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // cbMakeBackup
+            // 
+            this.cbMakeBackup.AutoSize = true;
+            this.cbMakeBackup.Checked = true;
+            this.cbMakeBackup.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbMakeBackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbMakeBackup.Location = new System.Drawing.Point(3, 74);
+            this.cbMakeBackup.Name = "cbMakeBackup";
+            this.cbMakeBackup.Size = new System.Drawing.Size(161, 17);
+            this.cbMakeBackup.TabIndex = 10;
+            this.cbMakeBackup.Text = "Сделать резервную копию";
+            this.cbMakeBackup.UseVisualStyleBackColor = true;
             // 
             // nudDefDays
             // 
@@ -140,38 +151,27 @@
             0,
             0});
             // 
-            // label5
+            // nudVisitCount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(225, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "дней от удаления";
-            // 
-            // cbMakeBackup
-            // 
-            this.cbMakeBackup.AutoSize = true;
-            this.cbMakeBackup.Checked = true;
-            this.cbMakeBackup.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbMakeBackup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbMakeBackup.Location = new System.Drawing.Point(3, 74);
-            this.cbMakeBackup.Name = "cbMakeBackup";
-            this.cbMakeBackup.Size = new System.Drawing.Size(161, 17);
-            this.cbMakeBackup.TabIndex = 10;
-            this.cbMakeBackup.Text = "Сделать резервную копию";
-            this.cbMakeBackup.UseVisualStyleBackColor = true;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.Location = new System.Drawing.Point(3, 97);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(378, 23);
-            this.btnStart.TabIndex = 11;
-            this.btnStart.Text = "Старт";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            this.nudVisitCount.Location = new System.Drawing.Point(290, 38);
+            this.nudVisitCount.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudVisitCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudVisitCount.Name = "nudVisitCount";
+            this.nudVisitCount.Size = new System.Drawing.Size(45, 20);
+            this.nudVisitCount.TabIndex = 5;
+            this.nudVisitCount.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             // 
             // FrmMain
             // 
@@ -196,8 +196,9 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chrome History Cleaner v1.0.1";
-            ((System.ComponentModel.ISupportInitialize)(this.nudVisitCount)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nudDefDays)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVisitCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
