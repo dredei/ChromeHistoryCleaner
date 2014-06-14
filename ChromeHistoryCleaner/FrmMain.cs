@@ -19,7 +19,6 @@ namespace ChromeHistoryCleaner
 
         private void button1_Click( object sender, EventArgs e )
         {
-            //HistoryCleaner.MakeBackup( @"c:\Users\Home\AppData\Local\Google\Chrome\User Data\Default\History" );
             HistoryCleaner.ClearHistory( @"c:\Users\Home\AppData\Local\Google\Chrome\User Data\Default\History", 2, 14 );
         }
     }

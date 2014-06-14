@@ -64,14 +64,15 @@ namespace ChromeHistoryCleaner
         /// <param name="path">Путь к файлу</param>
         /// <param name="visitCount">Минимальное количество посещений</param>
         /// <param name="dayDef">За сколько дней защищать данные</param>
+        /// <param name="makeBackup">Создавать ли резервную копию</param>
         /// <returns>Возвращает к-во удаленных записей</returns>
-        public static BigInteger ClearHistory( string path, int visitCount, int dayDef )
+        public static BigInteger ClearHistory( string path, int visitCount, int dayDef, bool makeBackup = true )
         {
             if ( IsChromeRunning() )
             {
                 throw new Exception( "Закройте Chrome!" );
             }
-            if ( !MakeBackup( path ) )
+            if ( makeBackup && !MakeBackup( path ) )
             {
                 throw new Exception( "Не удалось сделать резервную копию!" );
             }
