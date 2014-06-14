@@ -15,6 +15,7 @@ namespace ChromeHistoryCleaner
         public FrmMain()
         {
             this.InitializeComponent();
+            this.Icon = Resources.appIcon;
             this.tbFilePath.Text = HistoryCleaner.GetPathToHistory();
             this.LoadSettings();
         }
