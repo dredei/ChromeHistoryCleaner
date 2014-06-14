@@ -101,5 +101,15 @@ namespace ChromeHistoryCleaner
                 return count;
             }
         }
+
+        /// <summary>
+        /// Возвращает путь к файлу History
+        /// </summary>
+        /// <returns></returns>
+        public static string GetPathToHistory()
+        {
+            return Environment.GetFolderPath( Environment.SpecialFolder.LocalApplicationData ) +
+                   @"\Google\Chrome\User Data\Default\History";
+        }
     }
 }

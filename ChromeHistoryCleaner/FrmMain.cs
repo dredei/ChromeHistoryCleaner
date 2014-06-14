@@ -14,6 +14,7 @@ namespace ChromeHistoryCleaner
         public FrmMain()
         {
             this.InitializeComponent();
+            this.tbFilePath.Text = HistoryCleaner.GetPathToHistory();
         }
 
         private void btnStart_Click( object sender, EventArgs e )

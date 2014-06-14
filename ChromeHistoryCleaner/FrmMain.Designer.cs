@@ -152,6 +152,9 @@
             // cbMakeBackup
             // 
             this.cbMakeBackup.AutoSize = true;
+            this.cbMakeBackup.Checked = true;
+            this.cbMakeBackup.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbMakeBackup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbMakeBackup.Location = new System.Drawing.Point(3, 74);
             this.cbMakeBackup.Name = "cbMakeBackup";
             this.cbMakeBackup.Size = new System.Drawing.Size(161, 17);
